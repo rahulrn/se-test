@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { Row, Col, Spinner, Alert } from "react-bootstrap";
 
 class Article extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     let articles =
@@ -12,7 +9,7 @@ class Article extends Component {
         this.props.articles.map((value, index) => {
           return (
             <Col className="main-col" sm={6} xs={12} key={index}>
-              <img src={value.urlToImage} style={{ width: "100%" }} />
+              {value.urlToImage ? <img src={value.urlToImage} style={{ width: "100%" }} alt={value.title}/> : ''}
               <h3>
                 <a
                   href={value.url}
